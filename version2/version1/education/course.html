@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 视口设置：让页面在手机端自适应缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <!-- 引入自定义 CSS 样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 的 Poppins 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================
+     子页面顶部横幅（半屏高度）
+     背景图 + 导航栏 + 页面标题
+     ============================================ -->
+    <section class="sub-header">
+        <nav>
+            <!-- Logo，点击回到首页 -->
+            <a href="index.html"><img src="web%20picture/sunway-university-seal-transparent.png"></a>
+            <!-- 导航菜单容器（手机端变为侧边抽屉菜单） -->
+            <div class="nav-links" id="navLinks">
+                <!-- 关闭图标（仅手机端显示），点击关闭菜单 -->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="auth_system.html">LOGIN/REGISTER</a></li>
+                </ul>
+            </div>
+            <!-- 汉堡菜单图标（仅手机端显示），点击打开菜单 -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- 当前页面标题 -->
+        <h1>Our Courses</h1>
+    </section>
+
+    <section class="catalogue" id="catalogue">
+        <div class="catalogue-heading">
+            <span class="section-kicker">Explore Sunway</span>
+            <h1>Courses & Student Services</h1>
+            <p>Search, filter and compare programmes, facilities and support services.</p>
+        </div>
+        <div class="catalogue-controls" aria-label="Catalogue controls">
+            <label class="catalogue-field" for="catalogueSearch">
+                <span>Search</span>
+                <div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="catalogueSearch" type="search" placeholder="Search programmes or services" autocomplete="off"></div>
+            </label>
+            <label class="catalogue-field" for="catalogueCategory"><span>Category</span><select id="catalogueCategory"><option value="all">All categories</option><option value="programme">Programmes</option><option value="service">Student services</option><option value="facility">Facilities</option></select></label>
+            <label class="catalogue-field" for="catalogueSort"><span>Sort by</span><select id="catalogueSort"><option value="name-asc">Name: A–Z</option><option value="name-desc">Name: Z–A</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></label>
+        </div>
+        <p class="catalogue-results" id="catalogueResults" aria-live="polite"></p>
+        <div class="catalogue-grid" id="catalogueGrid"></div>
+    </section>
+
+    <!-- ============================================
+     课程板块
+     三列卡片展示课程分类
+     ============================================ -->
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>provide students with diverse development opportunities</p>
+
+        <div class="row">
+            <!-- 课程卡片1：中级 -->
+            <div class="course-col">
+                <h3>PHD</h3>
+                <p>Sunway University offers PhD programmes that focus on independent research and academic excellence.
+                Students work closely with experienced supervisors to conduct original research and contribute new knowledge to their chosen fields.
+                The programmes prepare graduates for careers in higher education, research, and industry.
+                </p>
+            </div>
+            <!-- 课程卡片2：学位 -->
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Sunway University offers a wide range of bachelor's degree programmes across various disciplines, including business, computing, engineering, health sciences, hospitality, and the arts.
+                 The programmes combine academic knowledge with practical learning to prepare students for professional careers and lifelong learning.
+                </p>
+            </div>
+            <!-- 课程卡片3：研究生 -->
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>Sunway University offers a range of postgraduate programmes, including master's and doctoral degrees, across various disciplines.
+                 These programmes are designed to deepen students' expertise, strengthen research capabilities, and prepare graduates for leadership roles in academia and industry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     校园设施板块
+     三列图文卡片（图书馆、操场、食堂）
+     ============================================ -->
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>Sunway University offers modern facilities</p>
+
+        <div class="row">
+            <!-- 设施1：图书馆 -->
+            <div class="facilities-col">
+                <img src="images/library.png">
+                <h3>World Class Library</h3>
+                <p>The Tun Hussein Onn Sunway Library provides students with a wide range of books, journals, and digital resources.
+                     It also offers quiet study areas, discussion rooms, and computer facilities to support learning and research.</p>
+            </div>
+            <!-- 设施2：操场 -->
+            <div class="facilities-col">
+                <img src="images/basketball.png">
+                <h3>Largest Play Ground</h3>
+                <p>The outdoor recreational area provides students with a relaxing space for leisure and outdoor activities.</p>
+            </div>
+            <!-- 设施3：食堂 -->
+            <div class="facilities-col">
+                <img src="images/cafeteria.png">
+                <h3>Tasty and Healthy Food</h3>
+                <p>The campus offers a variety of tasty and healthy food options to meet students' different tastes and dietary needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     页脚
+     版权信息 + 社交媒体图标
+     ============================================ -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Sunway University is committed to providing quality education and helping students achieve academic and personal success.</p>
+        <div class="icons">
+            <!-- Font Awesome 品牌图标：社交媒体链接 -->
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <!-- 版权声明，空心爱心图标 -->
+    </section>
+
+    <!-- ============================================
+     JavaScript：手机端侧边菜单的开关逻辑
+     ============================================ -->
+    <script>
+        // 获取导航菜单元素
+        var navLinks = document.getElementById("navLinks");
+
+        // 打开菜单：将侧边栏从右侧滑入（right 从 -200px 变为 0）
+        function showMenu(){
+            navLinks.style.right= "0";
+        }
+
+        // 关闭菜单：将侧边栏隐藏到右侧屏幕外（right 设为 -200px）
+        function hideMenu(){
+            navLinks.style.right= "-200px";
+        }
+
+        const catalogueItems = [
+            { name: "Bachelor of Business", category: "programme", price: 32000, icon: "fa-chart-line", description: "Build practical leadership, marketing and entrepreneurship skills." },
+            { name: "Computer Science Degree", category: "programme", price: 35000, icon: "fa-code", description: "Learn software development, data and emerging technologies." },
+            { name: "Master of Data Science", category: "programme", price: 41000, icon: "fa-database", description: "Advance your analytics and machine-learning expertise." },
+            { name: "Foundation Studies", category: "programme", price: 18000, icon: "fa-graduation-cap", description: "A supported pathway into your chosen undergraduate degree." },
+            { name: "Career Advisory", category: "service", price: 0, icon: "fa-briefcase", description: "Get guidance on internships, CVs and career planning." },
+            { name: "Academic Writing Hub", category: "service", price: 0, icon: "fa-pen-nib", description: "One-to-one help to strengthen research and writing." },
+            { name: "Counselling Support", category: "service", price: 0, icon: "fa-heart", description: "Confidential wellbeing support for every student." },
+            { name: "24/7 Library Access", category: "facility", price: 120, icon: "fa-book-open", description: "Extended access to study spaces and digital resources." },
+            { name: "Sports Centre Pass", category: "facility", price: 180, icon: "fa-dumbbell", description: "Stay active with courts, fitness areas and group sessions." }
+        ];
+        const categoryNames = { programme: "Programme", service: "Student service", facility: "Facility" };
+        const catalogueSearch = document.getElementById("catalogueSearch");
+        const catalogueCategory = document.getElementById("catalogueCategory");
+        const catalogueSort = document.getElementById("catalogueSort");
+        const catalogueGrid = document.getElementById("catalogueGrid");
+        const catalogueResults = document.getElementById("catalogueResults");
+
+        function renderCatalogue() {
+            const keyword = catalogueSearch.value.trim().toLowerCase();
+            const category = catalogueCategory.value;
+            const items = catalogueItems.filter(item => (category === "all" || item.category === category) && (item.name + " " + item.description + " " + item.category).toLowerCase().includes(keyword)).sort((a, b) => {
+                if (catalogueSort.value === "price-asc") return a.price - b.price;
+                if (catalogueSort.value === "price-desc") return b.price - a.price;
+                const result = a.name.localeCompare(b.name);
+                return catalogueSort.value === "name-desc" ? -result : result;
+            });
+            catalogueResults.textContent = items.length + " " + (items.length === 1 ? "item" : "items") + " found";
+            catalogueGrid.innerHTML = items.length ? items.map(item => `<article class="catalogue-card"><div class="catalogue-card-top"><span class="catalogue-icon"><i class="fa-solid ${item.icon}" aria-hidden="true"></i></span><span class="catalogue-tag">${categoryNames[item.category]}</span></div><h3>${item.name}</h3><p>${item.description}</p><div class="catalogue-card-bottom"><strong>${item.price === 0 ? "Free" : "From RM " + item.price.toLocaleString()}</strong><a href="contact.html" aria-label="Ask about ${item.name}">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article>`).join("") : `<div class="catalogue-empty"><i class="fa-regular fa-folder-open" aria-hidden="true"></i><p>No matches found. Try another keyword or category.</p></div>`;
+        }
+        catalogueSearch.addEventListener("input", renderCatalogue);
+        catalogueCategory.addEventListener("change", renderCatalogue);
+        catalogueSort.addEventListener("change", renderCatalogue);
+        renderCatalogue();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 视口设置：让页面在手机端自适应缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <!-- 引入自定义 CSS 样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 的 Poppins 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================
+     子页面顶部横幅（半屏高度）
+     背景图 + 导航栏 + 页面标题
+     ============================================ -->
+    <section class="sub-header">
+        <nav>
+            <!-- Logo，点击回到首页 -->
+            <a href="index.html"><img src="web%20picture/sunway-university-seal-transparent.png"></a>
+            <!-- 导航菜单容器（手机端变为侧边抽屉菜单） -->
+            <div class="nav-links" id="navLinks">
+                <!-- 关闭图标（仅手机端显示），点击关闭菜单 -->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="auth_system.html">LOGIN/REGISTER</a></li>
+                </ul>
+            </div>
+            <!-- 汉堡菜单图标（仅手机端显示），点击打开菜单 -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- 当前页面标题 -->
+        <h1>Our Certificate </h1>
+    </section>
+
+    <!-- ============================================
+     博客内容区域
+     左侧文章正文 + 右侧分类栏
+     ============================================ -->
+    <section class="blog-content">
+        <div class="row">
+            <!-- 左侧：文章内容区 -->
+            <div class="blog-left">
+                <!-- 文章配图 -->
+                <img src="images/certificate.jpg">
+                <!-- 文章标题 -->
+                <h2>Our Certificate </h2>
+                <!-- 文章正文（占位文字） -->
+                <p>1.Sunway University awards internationally recognized qualifications, including diplomas, bachelor's degrees, master's degrees, and PhD degrees.</p>
+                <br>
+                <p>2.We also offer a wide range of micro-credentials to help students develop industry-relevant skills and enhance their career prospects.</p>
+                <br>
+                <p>3.We also offer a variety of short courses to help students develop practical skills and expand their knowledge.</p>
+
+                <!-- 评论区 -->
+                <div class="comment-box">
+                    <h3>Leave a comment</h3>
+                    <!-- 评论表单 -->
+                    <form class="comment-form">
+                        <input type="text" placeholder="Enter Name">
+                        <input type="email" placeholder="Enter Email">
+                        <!-- 评论内容多行文本框 -->
+                        <textarea rows="5" placeholder="Your comment"></textarea>
+                        <!-- 提交按钮：hero-btn 基础样式 + red-btn 红色主题 -->
+                        <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 右侧：文章分类栏 -->
+            <div class="blog-right">
+                <!-- 分类标题（红色背景） -->
+                <h3>Post Categories</h3>
+                <!-- 分类列表项：左文字 + 右数字 -->
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Data Science</span>
+                    <span>28</span>
+                </div>
+                <div>
+                    <span>Machine Learning</span>
+                    <span>15</span>
+                </div>
+                <div>
+                    <span>Computer Science</span>
+                    <span>34</span>
+                </div>
+                <div>
+                    <span>AutoCAD</span>
+                    <span>42</span>
+                </div>
+                <div>
+                    <span>Journalism</span>
+                    <span>22</span>
+                </div>
+                <div>
+                    <span>Commerce</span>
+                    <span>30</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     页脚
+     版权信息 + 社交媒体图标
+     ============================================ -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Sunway University is committed to providing quality education and helping students achieve academic and personal success</p>
+        <div class="icons">
+            <!-- Font Awesome 品牌图标：社交媒体链接 -->
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <!-- 版权声明，空心爱心图标 -->
+    </section>
+
+    <!-- ============================================
+     JavaScript：手机端侧边菜单的开关逻辑
+     ============================================ -->
+    <script>
+        // 获取导航菜单元素
+        var navLinks = document.getElementById("navLinks");
+
+        // 打开菜单：将侧边栏从右侧滑入（right 从 -200px 变为 0）
+        function showMenu(){
+            navLinks.style.right= "0";
+        }
+
+        // 关闭菜单：将侧边栏隐藏到右侧屏幕外（right 设为 -200px）
+        function hideMenu(){
+            navLinks.style.right= "-200px";
+        }
+    </script>
+
+</body>
+</html>

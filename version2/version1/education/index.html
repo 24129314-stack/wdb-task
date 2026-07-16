@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 视口设置：让页面在手机端自适应缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <!-- 引入自定义 CSS 样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 的 Poppins 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================
+     首页头部区域
+     全屏背景图 + 导航栏 + 居中标题文字
+     ============================================ -->
+    <section class="header">
+        <nav>
+            <!-- Logo，点击回到首页 -->
+            <a href="index.html"><img src="web%20picture/sunway-university-seal-transparent.png"></a>
+            <!-- 导航菜单容器（手机端变为侧边抽屉菜单） -->
+            <div class="nav-links" id="navLinks">
+                <!-- 关闭图标（仅手机端显示），点击关闭菜单 -->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="auth_system.html">LOGIN/REGISTER</a></li>
+                </ul>
+            </div>
+            <!-- 汉堡菜单图标（仅手机端显示），点击打开菜单 -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- 首页居中文字区域 -->
+        <div class="text-box">
+            <h1>#1 private university in ASEAN in the THE Sustainability Impact Rankings 2026</h1>
+            <P>Sunway University is a well-known Malaysian private university located in Sunway City, Petaling Jaya, within the Greater Kuala Lumpur area.</P>
+            <a href="" class="hero-btn">Visit Us To know More</a>
+        </div>
+    </section>
+
+    <!-- Dynamic catalogue: rendered and updated entirely by JavaScript. -->
+    <section class="catalogue" id="catalogue">
+        <div class="catalogue-heading">
+            <span class="section-kicker">Explore Sunway</span>
+            <h1>Courses & Student Services</h1>
+            <p>Find the programme or support service that fits your next step.</p>
+        </div>
+
+        <div class="catalogue-controls" aria-label="Catalogue controls">
+            <label class="catalogue-field" for="catalogueSearch">
+                <span>Search</span>
+                <div class="search-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input id="catalogueSearch" type="search" placeholder="Search programmes or services" autocomplete="off">
+                </div>
+            </label>
+            <label class="catalogue-field" for="catalogueCategory">
+                <span>Category</span>
+                <select id="catalogueCategory">
+                    <option value="all">All categories</option>
+                    <option value="programme">Programmes</option>
+                    <option value="service">Student services</option>
+                    <option value="facility">Facilities</option>
+                </select>
+            </label>
+            <label class="catalogue-field" for="catalogueSort">
+                <span>Sort by</span>
+                <select id="catalogueSort">
+                    <option value="name-asc">Name: A–Z</option>
+                    <option value="name-desc">Name: Z–A</option>
+                    <option value="price-asc">Price: low to high</option>
+                    <option value="price-desc">Price: high to low</option>
+                </select>
+            </label>
+        </div>
+
+        <p class="catalogue-results" id="catalogueResults" aria-live="polite"></p>
+        <div class="catalogue-grid" id="catalogueGrid"></div>
+    </section>
+
+    <!-- ============================================
+     课程板块
+     三列卡片展示课程分类
+     ============================================ -->
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>provide students with diverse development opportunities</p>
+
+        <div class="row">
+            <!-- 课程卡片1：中级 -->
+            <div class="course-col">
+                <h3>PHD</h3>
+                <p>Sunway University offers PhD programmes that focus on independent research and academic excellence.
+                    Students work closely with experienced supervisors to conduct original research and contribute new knowledge to their chosen fields.
+                    The programmes prepare graduates for careers in higher education, research, and industry.
+                </p>
+            </div>
+            <!-- 课程卡片2：学位 -->
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Sunway University offers a wide range of bachelor's degree programmes across various disciplines, including business, computing, engineering, health sciences, hospitality, and the arts.
+                 The programmes combine academic knowledge with practical learning to prepare students for professional careers and lifelong learning.
+                </p>
+            </div>
+            <!-- 课程卡片3：研究生 -->
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>Sunway University offers a range of postgraduate programmes, including master's and doctoral degrees, across various disciplines.
+                 These programmes are designed to deepen students' expertise, strengthen research capabilities, and prepare graduates for leadership roles in academia and industry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     校区展示板块
+     三列图片卡片，悬停显示红色遮罩和城市名
+     ============================================ -->
+    <section class="campus">
+        <h1>Our Campus</h1>
+        <p>our buliding</p>
+
+        <div class="row">
+            <!-- 校区1：伦敦 -->
+            <div class="campus-col">
+                <img class="campus-img" src="web%20picture/sq.png">
+                <div class="layer">
+                    <h3>SQUARE</h3>
+                </div>
+            </div>
+            <!-- 校区2：纽约 -->
+            <div class="campus-col">
+                <img class="campus-img" src="images/main door.png">
+                <div class="layer">
+                    <h3>MAIN DOOR</h3>
+                </div>
+            </div>
+            <!-- 校区3：华盛顿 -->
+            <div class="campus-col">
+                <img class="campus-img" src="images/fet.png">
+                <div class="layer">
+                    <h3>FET</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     校园设施板块
+     三列图文卡片（图书馆、操场、食堂）
+     ============================================ -->
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>Sunway University offers modern facilities</p>
+
+        <div class="row">
+            <!-- 设施1：图书馆 -->
+            <div class="facilities-col">
+                <img src="images/library.png">
+                <h3>World Class Library</h3>
+                <p>The Tun Hussein Onn Sunway Library provides students with a wide range of books, journals, and digital resources.
+                     It also offers quiet study areas, discussion rooms, and computer facilities to support learning and research.</p>
+            </div>
+            <!-- 设施2：操场 -->
+            <div class="facilities-col">
+                <img src="images/basketball.png">
+                <h3>Largest Play Ground</h3>
+                <p>The outdoor recreational area provides students with a relaxing space for leisure and outdoor activities.</p>
+            </div>
+            <!-- 设施3：食堂 -->
+            <div class="facilities-col">
+                <img src="images/cafeteria.png">
+                <h3>Tasty and Healthy Food</h3>
+                <p>The campus offers a variety of tasty and healthy food options to meet students' different tastes and dietary needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     学生评价板块
+     两列卡片，包含头像、评价文字和星级评分
+     ============================================ -->
+    <section class="testimonials">
+        <h1>What Our Student Says</h1>
+        <p>some students say about Sunway University</p>
+
+        <div class="row">
+            <!-- 评价卡片1 -->
+            <div class="testimonial-col">
+                <img src="images/user1.jpg">
+                <div>
+                    <p>I enjoy studying at Sunway University because the campus is modern, clean, and comfortable.
+                        The lecturers are friendly and supportive, and there are many facilities such as the library, laboratories, and sports areas.
+                        I also like the variety of food available on campus. Overall,
+                        I have had a great learning experience and would recommend Sunway University to other students.</p>
+                    <h3>Christine Berkley</h3>
+                    <!-- 5星评分：4颗实心星 + 1颗空心星 -->
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+
+            <!-- 评价卡片2 -->
+            <div class="testimonial-col">
+                <img src="images/user2.jpg">
+                <div>
+                    <p>As a student at Sunway University, I have enjoyed both the academic and campus experience.
+                        The learning environment is welcoming, the facilities are well maintained, and the lecturers are always willing to help.
+                        I have also met many students from different countries, which has made studying here even more enjoyable.
+                        Overall, I believe Sunway University is a great place to learn and grow.</p>
+                    <h3>David Byer</h3>
+                    <!-- 4.5星评分：4颗实心星 + 1颗半星 -->
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     行动号召板块（Call To Action）
+     横幅背景 + 报名按钮
+     ============================================ -->
+    <section class="cta">
+        <h1>Enroll for our various online courses<br> Anywhere From The World</h1>
+        <a href="#" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-- ============================================
+     页脚
+     版权信息 + 社交媒体图标
+     ============================================ -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Sunway University is committed to providing quality education and helping students achieve academic and personal success.</p>
+        <div class="icons">
+            <!-- Font Awesome 品牌图标：社交媒体链接 -->
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <!-- 版权声明，空心爱心图标 -->
+    </section>
+
+    <!-- ============================================
+     JavaScript：手机端侧边菜单的开关逻辑
+     ============================================ -->
+    <script>
+        // 获取导航菜单元素
+        var navLinks = document.getElementById("navLinks");
+
+        // 打开菜单：将侧边栏从右侧滑入（right 从 -200px 变为 0）
+        function showMenu(){
+            navLinks.style.right= "0";
+        }
+
+        // 关闭菜单：将侧边栏隐藏到右侧屏幕外（right 设为 -200px）
+        function hideMenu(){
+            navLinks.style.right= "-200px";
+        }
+
+        // Dynamic catalogue data and client-side filtering, searching and sorting.
+        const catalogueItems = [
+            { name: "Bachelor of Business", category: "programme", price: 32000, icon: "fa-chart-line", description: "Build practical leadership, marketing and entrepreneurship skills." },
+            { name: "Computer Science Degree", category: "programme", price: 35000, icon: "fa-code", description: "Learn software development, data and emerging technologies." },
+            { name: "Master of Data Science", category: "programme", price: 41000, icon: "fa-database", description: "Advance your analytics and machine-learning expertise." },
+            { name: "Foundation Studies", category: "programme", price: 18000, icon: "fa-graduation-cap", description: "A supported pathway into your chosen undergraduate degree." },
+            { name: "Career Advisory", category: "service", price: 0, icon: "fa-briefcase", description: "Get guidance on internships, CVs and career planning." },
+            { name: "Academic Writing Hub", category: "service", price: 0, icon: "fa-pen-nib", description: "One-to-one help to strengthen research and writing." },
+            { name: "Counselling Support", category: "service", price: 0, icon: "fa-heart", description: "Confidential wellbeing support for every student." },
+            { name: "24/7 Library Access", category: "facility", price: 120, icon: "fa-book-open", description: "Extended access to study spaces and digital resources." },
+            { name: "Sports Centre Pass", category: "facility", price: 180, icon: "fa-dumbbell", description: "Stay active with courts, fitness areas and group sessions." }
+        ];
+
+        const categoryNames = { programme: "Programme", service: "Student service", facility: "Facility" };
+        const catalogueSearch = document.getElementById("catalogueSearch");
+        const catalogueCategory = document.getElementById("catalogueCategory");
+        const catalogueSort = document.getElementById("catalogueSort");
+        const catalogueGrid = document.getElementById("catalogueGrid");
+        const catalogueResults = document.getElementById("catalogueResults");
+
+        function formatPrice(price) {
+            return price === 0 ? "Free" : "From RM " + price.toLocaleString();
+        }
+
+        function renderCatalogue() {
+            const keyword = catalogueSearch.value.trim().toLowerCase();
+            const category = catalogueCategory.value;
+            const sort = catalogueSort.value;
+            const items = catalogueItems
+                .filter(item => category === "all" || item.category === category)
+                .filter(item => (item.name + " " + item.description + " " + item.category).toLowerCase().includes(keyword))
+                .sort((a, b) => {
+                    if (sort === "price-asc") return a.price - b.price;
+                    if (sort === "price-desc") return b.price - a.price;
+                    const comparison = a.name.localeCompare(b.name);
+                    return sort === "name-desc" ? -comparison : comparison;
+                });
+
+            catalogueResults.textContent = items.length + " " + (items.length === 1 ? "item" : "items") + " found";
+            catalogueGrid.innerHTML = items.length ? items.map(item => `
+                <article class="catalogue-card">
+                    <div class="catalogue-card-top">
+                        <span class="catalogue-icon"><i class="fa-solid ${item.icon}" aria-hidden="true"></i></span>
+                        <span class="catalogue-tag">${categoryNames[item.category]}</span>
+                    </div>
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <div class="catalogue-card-bottom">
+                        <strong>${formatPrice(item.price)}</strong>
+                        <a href="contact.html" aria-label="Ask about ${item.name}">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>`).join("") : `
+                <div class="catalogue-empty"><i class="fa-regular fa-folder-open" aria-hidden="true"></i><p>No matches found. Try another keyword or category.</p></div>`;
+        }
+
+        catalogueSearch.addEventListener("input", renderCatalogue);
+        catalogueCategory.addEventListener("change", renderCatalogue);
+        catalogueSort.addEventListener("change", renderCatalogue);
+        renderCatalogue();
+    </script>
+
+</body>
+</html>

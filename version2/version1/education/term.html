@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website Design - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="web%20picture/sunway-university-seal-transparent.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="term.html">TERM</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Term</h1>
+    </section>
+    <section class="team-section">
+        <h1>Our Team Members</h1>
+        <p>Meet the dedicated developers behind this project, including our student details and contributions.</p>
+
+        <div class="team-row">
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>EugeneTeeYeeFarn</h3>
+                    <p class="student-id">Student ID: 26030502</p>
+                    <p class="member-role">Javascript design & leader</p>
+                </div>
+                <a href="portfolio-eugene.html" class="hero-btn red-btn">View Portfolio</a>
+            </div>
+
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>Shao Peng Yuan</h3>
+                    <p class="student-id">Student ID: 24129314</p>
+                    <p class="member-role">HTML & CSS design</p>
+                </div>
+                <a href="portfolio-jimmy.html" class="hero-btn red-btn">View Portfolio</a>
+            </div>
+
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>Mok Yi Thoong</h3>
+                    <p class="student-id">Student ID: 24075400</p>
+                    <p class="member-role">UI/UX Designer</p>
+                </div>
+                <a href="portfolio-member3.html" class="hero-btn red-btn">View Portfolio</a>
+            </div>
+
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>Saif Ferozkhan Pathan</h3>
+                    <p class="student-id">Student ID: 25144999</p>
+                    <p class="member-role">QA Engineer</p>
+                </div>
+                <a href="portfolio-member4.html" class="hero-btn red-btn">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Sunway University is committed to providing quality education and helping students achieve academic and personal success.</p>
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </section>
+<!-- 用于切换菜单的 JavaScript -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right= "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right= "-200px";
+    }
+</script>
+
+</body>
+</html>

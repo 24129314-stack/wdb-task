@@ -1,0 +1,100 @@
+<!-- 文档类型声明：HTML5 -->
+<!DOCTYPE html>
+<!-- 网页语言为英语 -->
+<html>
+<head>
+    <!-- 设置视口：使网页在移动设备上自适应缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标题 -->
+    <!-- 引入自定义CSS样式文件 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入Google Fonts：Poppins字体，提供多种字重选择 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入Font Awesome图标库6.6.0版本 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- 子页面顶部横幅区域 -->
+    <section class="sub-header">
+        <!-- 导航栏 -->
+        <nav>
+            <!-- Logo链接，点击返回首页 -->
+            <a href="index.html"><img src="web%20picture/sunway-university-seal-transparent.png"></a>
+            <!-- 导航链接容器（移动端时隐藏，通过JS控制显示） -->
+            <div class="nav-links" id="navLinks">
+                <!-- 关闭菜单图标（移动端显示），点击调用hideMenu()函数 -->
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <!-- 导航菜单列表 -->
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="auth_system.html">LOGIN/REGISTER</a></li>
+                </ul>
+            </div>
+            <!-- 菜单图标（移动端显示），点击调用showMenu()函数打开导航菜单 -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+       <!-- 子页面标题 -->
+       <h1>About Us</h1>
+    </section>
+
+    <!-- 关于我们内容区域 -->
+    <section class="about-us">
+        <!-- 使用row布局，将内容分为左右两列 -->
+        <div class="row">
+            <!-- 左侧文本列 -->
+            <div class="about-col">
+                <!-- 关于我们标题 -->
+                <h1>Sunway University is a leading private university in Malaysia</h1>
+                <!-- 关于我们描述文本（占位文字） -->
+                <p>Sunway is also ranked #45 globally and #1 private university in ASEAN in the THE Sustainability Impact Rankings 2026,
+                    as well as #1 private university in ASEAN by AppliedHE 2026.
+                    Offering industry-relevant undergraduate and postgraduate programmes in business, science, and technology, 
+                    the University is strengthened by international research partnerships and collaborations with leading institutions worldwide.</p>
+                <!-- 探索按钮 -->
+                <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+            </div>
+            <!-- 右侧图片列 -->
+            <div class="about-col">
+                <img src="images/about.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚区域 -->
+    <section class="footer">
+        <!-- 页脚标题 -->
+        <h4>About Us</h4>
+        <!-- 页脚描述文本（占位文字） -->
+        <p> Sunway University is committed to providing quality education and helping students achieve academic and personal success.</p>
+        <!-- 社交媒体图标区域 -->
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <!-- 制作信息 -->
+    </section>
+
+    <!-- 用于切换移动端导航菜单的 JavaScript -->
+    <script>
+        // 获取导航链接容器元素
+        var navLinks = document.getElementById("navLinks");
+
+        // 显示菜单：将导航栏从右侧滑入（right设为0）
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        // 隐藏菜单：将导航栏滑出屏幕右侧（right设为-200px）
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
