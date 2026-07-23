@@ -1,0 +1,489 @@
+/* ============================================================
+   index_design.css
+   首页 index.html 专用样式
+
+   包含：
+   1. 全局基础样式
+   2. 首页头部与导航栏
+   3. 动态课程目录
+   4. Courses / Campus / Facilities
+   5. Testimonials / CTA / Footer
+   6. 首页移动端响应式设计
+   ============================================================ */
+
+/* ============================================
+   全局重置样式
+   清除浏览器默认边距，统一字体
+   ============================================ */
+*{
+    margin:0;
+    padding: 0;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ============================================
+   首页头部横幅 (Header)
+   全屏背景大图 + 深色半透明遮罩
+   ============================================ */
+.header{
+    min-height: 100vh;              /* 最小高度占满整个视口 */
+    width: 100%;
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('web picture/sunway-square-lakeside-campus-rendering.jpg');  /* 深色渐变叠加背景图 */
+    background-position: center;    /* 背景图居中 */
+    background-size:cover ;         /* 背景图覆盖整个区域 */
+    position: relative;             /* 相对定位，为内部绝对定位元素提供参照 */
+}
+
+/* ============================================
+   导航栏
+   ============================================ */
+nav{
+    display:flex;                   /* 弹性布局 */
+    padding: 2% 6%;
+    justify-content: space-between; /* 两端对齐：logo 在左，菜单在右 */
+    align-items: center;            /* 垂直居中 */
+}
+nav img{
+    width:150px;                    /* Logo 宽度 */
+}
+
+/* 导航链接容器 */
+.nav-links{
+    flex:1;                         /* 占满剩余空间 */
+    text-align: right;              /* 链接靠右对齐 */
+}
+
+/* 导航链接列表项 */
+.nav-links ul li{
+    list-style:none;                /* 去掉列表圆点 */
+    display:inline-block;           /* 横向排列 */
+    padding:8px 12px;
+    position:relative;              /* 为 ::after 伪元素提供定位参照 */
+}
+
+/* 导航链接文字 */
+.nav-links ul li a{
+    color:#fff;                     /* 白色文字 */
+    text-decoration: none;          /* 去掉下划线 */
+    font-size:13px;
+}
+
+/* 导航链接悬停下划线（默认不显示） */
+.nav-links ul li::after{
+    content: '';                    /* 必须设置 content */
+    width: 0%;                      /* 默认宽度为 0，不可见 */
+    height: 2px;
+    background: #f44336;            /* 红色下划线 */
+    display:block;
+    margin:auto;
+    transition:0.5s;                /* 过渡动画 0.5 秒 */
+}
+
+/* 鼠标悬停时下划线展开 */
+.nav-links ul li:hover::after{
+    width: 100%;                    /* 下划线展开到 100% */
+}
+
+/* ============================================
+   首页居中文字区域
+   绝对定位 + transform 实现完美居中
+   ============================================ */
+.text-box{
+    width:90%;
+    color:#fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);  /* 将元素左上角移到中心，再用 translate 回移 50%，实现真正居中 */
+    text-align: center;
+}
+
+.text-box h1{
+    font-size:62px;
+}
+
+.text-box p{
+    margin:10px 0 40px;
+    font-size:14px;
+    color:#fff;
+}
+
+/* ============================================
+   Hero 按钮 (首页的 "Visit Us To Know More")
+   透明背景 + 白色边框，悬停变为红色
+   ============================================ */
+.hero-btn{
+    display:inline-block;
+    text-decoration: none;
+    color: #fff;
+    border:1px solid #fff;          /* 白色细边框 */
+    padding:12px 34px;
+    font-size: 13px;
+    background: transparent;        /* 透明背景 */
+    position: relative;
+    cursor:pointer;                 /* 鼠标变手型 */
+}
+
+.hero-btn:hover{
+    border:1px solid #f44336;       /* 悬停变红色边框 */
+    background: #f44336;            /* 悬停变红色背景 */
+    transition: 1s;
+}
+
+/* ============================================
+   手机端响应式布局 (屏幕宽度 ≤ 700px)
+   导航栏变为侧边菜单，标题字号缩小
+   ============================================ */
+@media(max-width: 700px){
+    .text-box h1{
+        font-size:20px;             /* 手机端标题缩小 */
+    }
+    .nav-links ul li{
+        display:block;              /* 菜单项竖排 */
+    }
+    .nav-links{
+        position: absolute;         /* 绝对定位，变为侧边抽屉菜单 */
+        background: #f44336;        /* 红色背景 */
+        height: 100vh;              /* 占满全屏高度 */
+        width:200px;
+        top: 0;
+        right: -200px;              /* 默认隐藏在右侧屏幕外 */
+        text-align: left;
+        z-index: 2;                 /* 确保在图片上层 */
+        transition: 1s;             /* 滑入滑出动画 */
+    }
+    nav .fa{
+        display:block;              /* 显示菜单图标（汉堡菜单） */
+        color:#fff;
+        margin:10px;
+        font-size: 22px;
+        cursor:pointer;
+    }
+    .nav-links ul{
+        padding:30px;
+    }
+}
+
+/* ============================================
+   课程板块 (Course)
+   三列卡片展示不同类型的课程
+   ============================================ */
+.course{
+    width:80%;
+    margin:auto;                    /* 居中 */
+    text-align:center;
+    padding-top:100px;
+}
+
+.row{
+    margin-top:5%;
+    display:flex;                   /* 弹性布局，子元素横向排列 */
+    justify-content: space-between; /* 均分间距 */
+    position: relative;
+}
+
+.course-col{
+    flex-basis:31%;                 /* 每个卡片占 31% 宽度，三列刚好 */
+    background:#fff3f3;             /* 浅粉色背景 */
+    border-radius:10px;             /* 圆角 */
+    margin-bottom:5%;
+    padding:20px 12px;
+    box-sizing: border-box;         /* padding 包含在宽度内 */
+    transition: 0.5s;
+}
+
+h3{
+    text-align: center;
+    font-weight:600;
+    margin:10px 0;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);  /* 悬停时显示阴影，卡片"浮起"效果 */
+}
+
+/* 手机端：课程卡片改为竖排 */
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;     /* 弹性方向改为纵向 */
+    }
+}
+
+/* ============================================
+   校区展示板块 (Campus)
+   图片 + 悬停红色遮罩 + 文字从底部上浮
+   ============================================ */
+.campus{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis:32%;
+    border-radius:10px;
+    margin-bottom:30px;
+    position: relative;             /* 为遮罩层提供定位 */
+    overflow: hidden;               /* 隐藏超出圆角的部分 */
+}
+.campus-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;              /* 保持比例裁剪，确保三张图高度一致 */
+    display: block;                 /* 消除图片底部空隙 */
+}
+
+/* 红色遮罩层（默认透明） */
+.layer{
+    background:transparent;
+    height:100%;
+    width: 100%;
+    position:absolute;              /* 覆盖在图片之上 */
+    left:0;
+    top:0;
+    transition: 0.5s;
+}
+
+.layer:hover{
+    background:rgba(226,0,0,0.7);   /* 悬停时显示半透明红色遮罩 */
+}
+
+/* 校区名称（默认在底部隐藏） */
+.layer h3{
+    width:100%;
+    font-weight:500;
+    color:#fff;
+    font-size:26px;
+    bottom:0;                       /* 初始位置在底部 */
+    left:50%;
+    transform: translateX(-50%);    /* 水平居中 */
+    position:absolute;
+    opacity: 0;                     /* 默认透明不可见 */
+    transition: 0.5s;
+}
+
+/* 悬停时文字上浮到中间并显示 */
+.layer:hover h3{
+    bottom:49%;
+    opacity: 1;
+}
+
+/* ============================================
+   设施介绍板块 (Facilities)
+   三列图文卡片（图书馆、操场、食堂等）
+   ============================================ */
+.facilities{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    padding-top:100px;
+}
+
+.facilities-col{
+    flex-basis:31%;
+    border-radius:10px;
+    margin-bottom:5%;
+    text-align: left;
+}
+
+.facilities-col img{
+    width:100%;
+    border-radius: 10px;
+}
+
+.facilities-col p{
+    padding:0;
+}
+.facilities-col h3{
+    margin-top:16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* ============================================
+   学生评价板块 (Testimonials)
+   两列布局，带头像 + 五星评价
+   ============================================ */
+.testimonials{
+    width:80%;
+    margin:auto;
+    padding-top:100px;
+    text-align:center;
+}
+
+.testimonial-col{
+    flex-basis:44%;
+    border-radius:10px;
+    margin-bottom:5%;
+    text-align: left;
+    background:#fff3f3;             /* 浅粉色背景 */
+    padding:25px;
+    cursor:pointer;
+    display:flex;                   /* 头像和文字横向排列 */
+}
+
+.testimonial-col img{
+    height:40px;
+    margin-left:5px;
+    margin-right:30px;
+    border-radius: 50%;             /* 圆形头像 */
+}
+
+.testimonial-col p{
+    padding:0;
+}
+
+.testimonial-col h3{
+    margin-top:15px;
+    text-align: left;
+}
+
+/* 评价星星颜色（实心、空心、常规图标统一红色） */
+.testimonial-col .fa{
+    color:#f44336;
+}
+
+.testimonial-col .fa-regular{
+    color:#f44336;
+}
+
+.testimonial-col .fa-solid{
+    color:#f44336;
+}
+
+/* 手机端：头像边距缩小 */
+@media(max-width: 700px){
+    .testimonial-col img{
+        margin-left:0px;
+        margin-right:15px;
+    }
+}
+
+/* ============================================
+   行动号召板块 (Call to Action)
+   又一横幅背景 + "Enroll Now" 按钮
+   ============================================ */
+.cta{
+    margin:100px auto;
+    width:80%;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/banner2.jpg);
+    background-position: center;
+    background-size:cover;
+    border-radius:10px;
+    text-align: center;
+    padding:100px 0;
+}
+
+.cta h1{
+    color:#fff;
+    margin-bottom:40px;
+    padding:0;
+}
+
+@media(max-width: 700px){
+    .cta h1{
+        font-size:24px;
+    }
+}
+
+/* ============================================
+   页脚 (Footer)
+   版权信息 + 社交媒体图标
+   ============================================ */
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom:25px;
+    margin-top:20px;
+    font-weight:600;
+}
+
+/* 社交媒体图标样式 */
+.icons .fa-brands{
+    color:#f44336;                  /* 红色图标 */
+    margin:0 13px;
+    cursor:pointer;
+    padding:18px 0;
+}
+
+/* 空心爱心图标变红 */
+.fa-heart-o{
+    color:#f44336;
+}
+
+/* 页脚实心爱心变红 */
+.footer .fa-heart {
+    color: #f44336;
+}
+
+/* ============================================
+   Dynamic courses and services catalogue
+   ============================================ */
+.catalogue {
+    width: 80%;
+    margin: auto;
+    padding: 90px 0 35px;
+}
+
+.catalogue-heading {
+    text-align: center;
+}
+
+.section-kicker {
+    display: inline-block;
+    color: #f44336;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.catalogue-heading h1 { font-size: 34px; color: #222; }
+.catalogue-heading p { color: #666; font-size: 14px; margin-top: 8px; }
+
+.catalogue-controls {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+    padding: 22px;
+    margin-top: 35px;
+    background: #fff3f3;
+    border-radius: 12px;
+}
+
+.catalogue-field { display: block; color: #555; font-size: 12px; font-weight: 600; }
+.catalogue-field > span { display: block; margin-bottom: 7px; }
+.catalogue-field input, .catalogue-field select {
+    width: 100%; box-sizing: border-box; border: 1px solid #e2d7d7; border-radius: 6px;
+    background: #fff; color: #333; padding: 11px 12px; outline-color: #f44336; font: inherit;
+}
+.search-input-wrap { position: relative; }
+.search-input-wrap i { position: absolute; top: 13px; left: 12px; color: #f44336; font-size: 13px; }
+.search-input-wrap input { padding-left: 34px; }
+.catalogue-results { color: #777; font-size: 13px; margin: 20px 0 15px; }
+
+.catalogue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.catalogue-card { display: flex; flex-direction: column; min-height: 210px; padding: 22px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,.05); transition: transform .25s, box-shadow .25s; }
+.catalogue-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,.11); }
+.catalogue-card-top, .catalogue-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.catalogue-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #fff0ef; color: #f44336; }
+.catalogue-tag { color: #a43a32; background: #fff3f3; border-radius: 20px; padding: 5px 9px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+.catalogue-card h3 { text-align: left; margin: 18px 0 8px; color: #222; font-size: 18px; }
+.catalogue-card p { color: #777; font-size: 13px; line-height: 1.55; }
+.catalogue-card-bottom { margin-top: auto; padding-top: 18px; color: #f44336; font-size: 13px; }
+.catalogue-card-bottom a { color: #555; text-decoration: none; font-weight: 500; }
+.catalogue-card-bottom a:hover { color: #f44336; }
+.catalogue-empty { grid-column: 1 / -1; text-align: center; padding: 45px; color: #777; background: #fafafa; border-radius: 10px; }
+.catalogue-empty i { font-size: 28px; color: #f44336; margin-bottom: 10px; }
+
+@media(max-width: 700px) {
+    .catalogue { padding-top: 65px; }
+    .catalogue-heading h1 { font-size: 27px; }
+    .catalogue-controls, .catalogue-grid { grid-template-columns: 1fr; }
+    .catalogue-controls { padding: 18px; }
+}

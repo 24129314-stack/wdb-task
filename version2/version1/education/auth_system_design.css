@@ -1,0 +1,242 @@
+/* Global CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling: Centered content with a background image and gradient overlay */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main container for the forms */
+.container {
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden; /* Hide the form that is currently out of view */
+    min-height: 550px;
+}
+
+/* Styling for the individual form containers (Login and Register) */
+.form-box {
+    width: 100%;
+    height: 100%;
+    padding: 40px 30px;
+    position: absolute;
+    top: 0;
+    transition: 0.5s ease-in-out; /* Smooth sliding animation */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Initial positions for the forms */
+#login-form { left: 0; } /* Visible by default */
+#register-form { left: 100%; } /* Hidden to the right by default */
+
+/* Form headings */
+h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Input field container styling */
+.input-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+/* Input field styling */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Padding on left to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background: #f0f0f0;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Input field focus state */
+.input-group input:focus {
+    border-color: #f44336;
+    background: #fff;
+}
+
+/* Icon styling inside the input group */
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+/* Individual field error message styling (hidden by default) */
+.error-msg {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Global error message styling (e.g., invalid login, email exists) */
+.global-error {
+    color: #fff;
+    background: #f44336;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 15px;
+    display: none;
+}
+
+/* Primary button styling */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+/* Primary button hover state */
+.btn:hover { background: #d32f2f; }
+
+/* Outline button styling (used for 'Previous' buttons) */
+.btn-outline {
+    background: transparent;
+    color: #f44336;
+    border: 1px solid #f44336;
+}
+
+/* Outline button hover state */
+.btn-outline:hover {
+    background: #f44336;
+    color: #fff;
+}
+
+/* Container for the form toggle link (e.g., 'Register Now' or 'Back to Login') */
+.toggle-box {
+    text-align: center;
+    margin-top: auto; /* Push to the bottom of the form-box */
+    padding-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Toggle link styling */
+.toggle-box a {
+    color: #f44336;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Progress bar container styling */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Background track for the progress bar */
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 3px;
+    background: #e0e0e0;
+    z-index: 1;
+}
+
+/* Active line indicating current progress */
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0%;
+    height: 3px;
+    background: #f44336;
+    z-index: 2;
+    transition: 0.4s ease-in-out;
+}
+
+/* Styling for the circular step indicators (1, 2, 3) */
+.step-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 3;
+    transition: 0.4s ease-in-out;
+}
+
+/* Styling for active and completed step indicators */
+.step-indicator.active, .step-indicator.completed {
+    background: #f44336;
+    color: #fff;
+}
+
+/* Registration step container styling (hidden by default) */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+/* Display the currently active registration step */
+.form-step.active { display: block; }
+
+/* Container for button groupings (e.g., Next/Previous) */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Fade-in animation for step transitions */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container for checkboxes (e.g., Terms & Conditions) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #555;
+}
+
+.checkbox-group input { margin-right: 10px; }
