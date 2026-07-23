@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Member Profile | Sunway University</title>
+
+  <!-- 原本的网站 CSS -->
+  <link rel="stylesheet" href="member_design.css">
+
+  <!-- Google Font -->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<!-- ========================================
+     Header
+======================================== -->
+
+<section class="sub-header">
+
+  <nav>
+
+    <a href="index.html">
+      <img
+              src="web%20picture/sunway-university-seal-transparent.png"
+              alt="Sunway University Logo"
+      >
+    </a>
+
+    <div class="nav-links" id="navLinks">
+
+      <i
+              class="fa fa-times"
+              onclick="hideMenu()"
+      ></i>
+
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="course.html">COURSE</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="team.html">TEAM</a></li>
+
+        <li>
+          <a href="auth_system.html">
+            LOGIN/REGISTER
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <i
+            class="fa fa-bars"
+            onclick="showMenu()"
+    ></i>
+
+  </nav>
+
+  <h1>Member Profile</h1>
+
+</section>
+
+
+<!-- ========================================
+     Member Profile Content
+======================================== -->
+
+<main>
+
+  <section class="portfolio-section">
+
+    <div class="portfolio-container">
+
+
+      <!-- Page Heading -->
+
+      <div class="portfolio-heading">
+
+        <span>Team Member</span>
+
+        <h2>Meet Our Project Member</h2>
+
+        <p>
+          Learn more about the member's role,
+          technical skills and contribution to the team.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           Member Profile
+      ======================================== -->
+
+      <article class="profile-card">
+
+
+        <!-- Left Information -->
+
+        <div class="profile-info">
+
+          <div class="profile-label">
+            Member Profile
+          </div>
+
+
+          <!-- 修改组员姓名 -->
+
+          <h1>SHAO PENGYUAN</h1>
+
+
+          <!-- 修改职位 -->
+
+          <p class="profile-position">
+            HTML and css
+          </p>
+
+
+          <!-- 修改组员介绍 -->
+
+          <p class="profile-summary">
+            I am a Computer Science student passionate about
+            web development. I have experience using HTML and CSS
+            to build simple, responsive, and well-structured
+            websites. I enjoy learning new skills and improving
+            my front-end development abilities through hands-on
+            projects.
+          </p>
+
+
+          <!-- Quick Information -->
+
+          <div class="quick-info">
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+              <div>
+                <span>Programme</span>
+                <strong>Computer Science</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              <div>
+                <span>Location</span>
+                <strong>Malaysia</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-envelope"></i>
+
+              <div>
+                <span>Email</span>
+                <strong>24129314@sunwayeducation.info</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-code"></i>
+
+              <div>
+                <span>Main Role</span>
+                <strong>Web Development</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Buttons -->
+
+          <div class="profile-buttons">
+
+            <a
+                    href="#technical-skills"
+                    class="primary-button"
+            >
+              <i class="fa-solid fa-laptop-code"></i>
+              View Skills
+            </a>
+
+
+            <a
+                    href="mailto:24129314@sunwayeducation.info"
+                    class="secondary-button"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Contact Member
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Right Photo -->
+
+        <div class="profile-image">
+
+          <!--
+            组员照片路径：
+
+            images/SHAO picture.jpg
+          -->
+
+          <img
+                  src="images/SHAO%20picture.jpg"
+                  alt="Photo of SHAO PENGYUAN"
+          >
+
+
+          <div class="profile-image-content">
+
+            <span>Project Responsibility</span>
+
+            <h3>
+              Frontend Development and User Interface Design
+            </h3>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           Technical Skills
+      ======================================== -->
+
+      <section
+              class="skills-section"
+              id="technical-skills"
+      >
+
+        <div class="skills-title">
+
+          <i class="fa-solid fa-laptop-code"></i>
+
+          <div>
+            <h2>Technical Skills</h2>
+
+            <p>
+              Programming languages, technologies and development tools
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+          <!-- HTML -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>HTML</span>
+              <strong>50%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width: 50%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CSS -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>CSS</span>
+              <strong>50%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width: 50%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- ========================================
+     Footer
+======================================== -->
+
+<section class="footer">
+
+  <h4>About Us</h4>
+
+  <p>
+    Sunway University is committed to providing quality
+    education and helping students achieve academic
+    and personal success.
+  </p>
+
+  <div class="icons">
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </div>
+
+</section>
+
+
+<!-- ========================================
+     JavaScript
+======================================== -->
+
+<script>
+
+  var navLinks = document.getElementById("navLinks");
+
+
+  function showMenu() {
+    navLinks.style.right = "0";
+  }
+
+
+  function hideMenu() {
+    navLinks.style.right = "-200px";
+  }
+
+</script>
+
+</body>
+</html>
