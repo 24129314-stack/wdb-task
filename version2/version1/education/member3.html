@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Member Profile | Sunway University</title>
+
+  <!-- 原本的网站 CSS -->
+  <link rel="stylesheet" href="member_design.css">
+
+  <!-- Google Font -->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<!-- ========================================
+     Header
+======================================== -->
+
+<section class="sub-header">
+
+  <nav>
+
+    <a href="index.html">
+      <img
+              src="web%20picture/sunway-university-seal-transparent.png"
+              alt="Sunway University Logo"
+      >
+    </a>
+
+    <div class="nav-links" id="navLinks">
+
+      <i
+              class="fa fa-times"
+              onclick="hideMenu()"
+      ></i>
+
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="course.html">COURSE</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="team.html">TEAM</a></li>
+
+        <li>
+          <a href="auth_system.html">
+            LOGIN/REGISTER
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <i
+            class="fa fa-bars"
+            onclick="showMenu()"
+    ></i>
+
+  </nav>
+
+  <h1>Member Profile</h1>
+
+</section>
+
+
+<!-- ========================================
+     Member Profile Content
+======================================== -->
+
+<main>
+
+  <section class="portfolio-section">
+
+    <div class="portfolio-container">
+
+
+      <!-- Page Heading -->
+
+      <div class="portfolio-heading">
+
+        <span>Team Member</span>
+
+        <h2>Meet Our Project Member</h2>
+
+        <p>
+          Learn more about the member's role,
+          technical skills and contribution to the team.
+        </p>
+
+      </div>
+
+
+      <!-- ========================================
+           Member Profile
+      ======================================== -->
+
+      <article class="profile-card">
+
+
+        <!-- Left Information -->
+
+        <div class="profile-info">
+
+          <div class="profile-label">
+            Member Profile
+          </div>
+
+
+          <!-- 修改组员姓名 -->
+
+          <h1>MOK YI THOONG</h1>
+
+
+          <!-- 修改职位 -->
+
+          <p class="profile-position">
+            UX/UI Designer
+          </p>
+
+
+          <!-- 修改组员介绍 -->
+
+          <p class="profile-summary">
+            I am a Computer Science student with a strong interest in programming and technology. During my first semester, I learned the fundamentals of C++ programming, including variables, data types, control structures, functions, arrays, and basic problem-solving skills. Before starting university, I also taught myself basic HTML out of curiosity and a passion for web development, which inspired me to explore how websites are built. I enjoy learning new technologies and continuously improving my skills through both academic projects and self-learning. My goal is to become a better developer by gaining more experience, expanding my knowledge, and embracing new challenges in the ever-evolving field of computer science.
+          </p>
+
+
+          <!-- Quick Information -->
+
+          <div class="quick-info">
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+              <div>
+                <span>Programme</span>
+                <strong>Computer Science</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              <div>
+                <span>Location</span>
+                <strong>Malaysia</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-envelope"></i>
+
+              <div>
+                <span>Email</span>
+                <strong>24075400@imail.sunway.edu.my</strong>
+              </div>
+
+            </div>
+
+
+            <div class="quick-info-item">
+
+              <i class="fa-solid fa-code"></i>
+
+              <div>
+                <span>Main Role</span>
+                <strong>Front-end devoplement</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Buttons -->
+
+          <div class="profile-buttons">
+
+            <a
+                    href="#technical-skills"
+                    class="primary-button"
+            >
+              <i class="fa-solid fa-laptop-code"></i>
+              View Skills
+            </a>
+
+
+            <a
+                    href="mailto:24075400@imail.sunway.edu.my"
+                    class="secondary-button"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Contact Member
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Right Photo -->
+
+        <div class="profile-image">
+
+          <!--
+            组员照片路径：
+
+            web picture/member1.jpg
+          -->
+
+          <img
+                  src="web%20picture/member1.JPG"
+                  alt="Photo of Eugene Tee"
+          >
+
+
+          <div class="profile-image-content">
+
+            <span>Project Responsibility</span>
+
+            <h3>
+              Developed the dynamic product catalog
+            </h3>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           Technical Skills
+      ======================================== -->
+
+      <section
+              class="skills-section"
+              id="technical-skills"
+      >
+
+        <div class="skills-title">
+
+          <i class="fa-solid fa-laptop-code"></i>
+
+          <div>
+            <h2>Technical Skills</h2>
+
+            <p>
+              Programming languages, technologies and development tools
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+          <!-- HTML & CSS -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>HTML &amp; CSS</span>
+              <strong>50%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width: 50%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- JavaScript -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>JavaScript</span>
+              <strong>48%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width: 48%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Python -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>Python</span>
+              <strong>40%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width: 40%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- C Programming -->
+
+          <div class="skill-item">
+
+            <div class="skill-heading">
+              <span>C++ Programming</span>
+              <strong>70%</strong>
+            </div>
+
+            <div class="skill-bar">
+
+              <div
+                      class="skill-progress"
+                      style="width:70%;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- ========================================
+     Footer
+======================================== -->
+
+<section class="footer">
+
+  <h4>About Us</h4>
+
+  <p>
+    Sunway University is committed to providing quality
+    education and helping students achieve academic
+    and personal success.
+  </p>
+
+  <div class="icons">
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </div>
+
+</section>
+
+
+<!-- ========================================
+     JavaScript
+======================================== -->
+
+<script>
+
+  var navLinks = document.getElementById("navLinks");
+
+
+  function showMenu() {
+    navLinks.style.right = "0";
+  }
+
+
+  function hideMenu() {
+    navLinks.style.right = "-200px";
+  }
+
+</script>
+
+</body>
+</html>
