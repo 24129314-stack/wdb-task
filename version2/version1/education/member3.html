@@ -216,6 +216,17 @@
               <i class="fa-solid fa-envelope"></i>
               Contact Member
             </a>
+            <button
+                    type="button"
+                    class="download-button"
+                    onclick="downloadCV()"
+            >
+
+              <i class="fa-solid fa-file-arrow-down"></i>
+
+              Download CV
+
+            </button>
 
           </div>
 
@@ -415,6 +426,91 @@
 
   function hideMenu() {
     navLinks.style.right = "-200px";
+  }
+
+  /*
+    Simulated Downloadable CV for MOK YI THOONG
+*/
+
+  function downloadCV() {
+
+    const cvContent = `
+MOK YI THOONG
+Computer Science Student
+UX/UI Designer and Frontend Developer
+
+CONTACT INFORMATION
+Email: 24075400@imail.sunway.edu.my
+Location: Malaysia
+Programme: Computer Science
+
+PROFILE
+I am a Computer Science student with a strong interest in
+programming and technology. During my first semester, I learned
+the fundamentals of C++ programming, including variables, data
+types, control structures, functions, arrays, and basic
+problem-solving skills.
+
+Before starting university, I taught myself basic HTML because
+of my interest in web development. I enjoy learning new
+technologies and continuously improving my skills through
+academic projects and self-learning.
+
+TECHNICAL SKILLS
+- C++ Programming: 70%
+- HTML and CSS: 50%
+- JavaScript: 48%
+- Python: 40%
+- UX/UI Design
+- Frontend Development
+
+PROJECT ROLE
+UX/UI Designer and Frontend Developer
+
+PROJECT RESPONSIBILITIES
+- Developed the dynamic product catalogue.
+- Assisted with frontend page development.
+- Designed user interface elements.
+- Organised product information and page content.
+- Used HTML and CSS to structure and style web pages.
+- Used JavaScript to support dynamic page features.
+- Tested the product catalogue and user interface.
+- Supported project integration and debugging.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Sunway University
+
+CAREER INTERESTS
+- Software Development
+- Frontend Development
+- UX/UI Design
+- Web Development
+- Programming and Technology
+  `;
+
+    const cvFile = new Blob(
+            [cvContent],
+            {
+              type: "text/plain;charset=utf-8"
+            }
+    );
+
+    const downloadURL = URL.createObjectURL(cvFile);
+
+    const downloadLink = document.createElement("a");
+
+    downloadLink.href = downloadURL;
+
+    downloadLink.download = "Mok_Yi_Thoong_CV.txt";
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(downloadURL);
   }
 
 </script>

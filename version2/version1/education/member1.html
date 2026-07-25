@@ -216,6 +216,19 @@
               <i class="fa-solid fa-envelope"></i>
               Contact Member
             </a>
+            <!-- Simulated Download CV Button -->
+
+            <button
+                    type="button"
+                    class="download-button"
+                    onclick="downloadCV()"
+            >
+
+              <i class="fa-solid fa-file-arrow-down"></i>
+
+              Download CV
+
+            </button>
 
           </div>
 
@@ -436,6 +449,117 @@
 
   function hideMenu() {
     navLinks.style.right = "-200px";
+  }
+
+  /*
+      Simulated Downloadable CV
+
+      When the user clicks the Download CV button,
+      JavaScript creates a text file and downloads it.
+  */
+
+  function downloadCV() {
+
+    const cvContent = `
+EUGENE TEE YEE FARN
+Computer Science Student
+Team Leader & Authentication System Developer
+
+CONTACT INFORMATION
+Email: 26030502@imail.sunway.edu.my
+Location: Malaysia
+Programme: Computer Science
+
+PROFILE
+A Year 1 Computer Science student with a strong interest
+in backend development and experience using backend
+programming languages.
+
+In this project, I was responsible for assigning tasks
+to team members, integrating the different parts of
+the project, and developing a functional login and
+registration system using JavaScript.
+
+TECHNICAL SKILLS
+- C Programming: 90%
+- JavaScript: 80%
+- Python: 70%
+- PHP and MySQL: 70%
+- HTML and CSS: 65%
+
+PROJECT ROLE
+Team Leader and Authentication System Developer
+
+PROJECT RESPONSIBILITIES
+- Assigned tasks to team members.
+- Coordinated the project development process.
+- Integrated different web pages and project components.
+- Developed the login and registration system.
+- Used JavaScript to perform form validation.
+- Tested the website functions.
+- Helped solve integration and coding problems.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Sunway University
+
+CAREER INTERESTS
+- Backend Development
+- Web Development
+- Cybersecurity
+- Artificial Intelligence
+- Embedded Systems
+    `;
+
+
+    /*
+        Create a Blob object containing the CV text.
+    */
+
+    const cvFile = new Blob(
+            [cvContent],
+            {
+              type: "text/plain"
+            }
+    );
+
+
+    /*
+        Create a temporary download URL.
+    */
+
+    const downloadURL = URL.createObjectURL(cvFile);
+
+
+    /*
+        Create a temporary link element.
+    */
+
+    const downloadLink = document.createElement("a");
+
+
+    downloadLink.href = downloadURL;
+
+    downloadLink.download = "Eugene_Tee_CV.txt";
+
+
+    /*
+        Add the link to the page and trigger download.
+    */
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+
+
+    /*
+        Remove temporary link and URL.
+    */
+
+    document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(downloadURL);
+
   }
 
 </script>

@@ -221,6 +221,17 @@
               <i class="fa-solid fa-envelope"></i>
               Contact Member
             </a>
+            <button
+                    type="button"
+                    class="download-button"
+                    onclick="downloadCV()"
+            >
+
+              <i class="fa-solid fa-file-arrow-down"></i>
+
+              Download CV
+
+            </button>
 
           </div>
 
@@ -378,6 +389,84 @@
 
   function hideMenu() {
     navLinks.style.right = "-200px";
+  }
+
+  /*
+    Simulated Downloadable CV for SHAO PENGYUAN
+*/
+
+  function downloadCV() {
+
+    const cvContent = `
+SHAO PENGYUAN
+Computer Science Student
+Frontend Web Developer
+
+CONTACT INFORMATION
+Email: 24129314@sunwayeducation.info
+Location: Malaysia
+Programme: Computer Science
+
+PROFILE
+I am a Computer Science student who is passionate about web
+development. I have experience using HTML and CSS to build
+simple, responsive, and well-structured websites.
+
+I enjoy learning new skills and improving my front-end
+development abilities through hands-on projects.
+
+TECHNICAL SKILLS
+- HTML: 50%
+- CSS: 50%
+- Responsive Web Design
+- Web Page Structure
+- User Interface Styling
+
+PROJECT ROLE
+Frontend Web Developer
+
+PROJECT RESPONSIBILITIES
+- Developed web pages using HTML.
+- Styled website components using CSS.
+- Created clear and organised page layouts.
+- Assisted with frontend development.
+- Improved the website's visual appearance.
+- Helped ensure that pages were responsive.
+- Supported project integration and testing.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Sunway University
+
+CAREER INTERESTS
+- Frontend Development
+- Web Design
+- Responsive Website Development
+- User Interface Design
+  `;
+
+    const cvFile = new Blob(
+            [cvContent],
+            {
+              type: "text/plain;charset=utf-8"
+            }
+    );
+
+    const downloadURL = URL.createObjectURL(cvFile);
+
+    const downloadLink = document.createElement("a");
+
+    downloadLink.href = downloadURL;
+
+    downloadLink.download = "Shao_Pengyuan_CV.txt";
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(downloadURL);
   }
 
 </script>
