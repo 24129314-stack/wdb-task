@@ -10,8 +10,11 @@
 
   <title>Member Profile | Sunway University</title>
 
-  <!-- 原本的网站 CSS -->
+  
   <link rel="stylesheet" href="member_design.css">
+
+  
+  <link rel="stylesheet" href="m2.css">
 
   <!-- Google Font -->
   <link
@@ -23,6 +26,12 @@
   <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <!-- Academicons -->
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
   >
 
 </head>
@@ -108,239 +117,103 @@
 
 
       <!-- ========================================
-           Member Profile
+           SHAO PENGYUAN - Portfolio Content
       ======================================== -->
 
-      <article class="profile-card">
+      <!-- ========== MASTHEAD ========== -->
+      <div class="masthead">
+        <div class="masthead__inner-wrap">
+          <nav class="greedy-nav">
+            <button><div class="navicon"></div></button>
+            <ul class="visible-links">
+              <li class="masthead__menu-item masthead__menu-item--lg">
+                <a href="#">SHAO PENGYUAN</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
 
+      <!-- ========== MAIN CONTENT ========== -->
+      <div id="main" role="main">
 
-        <!-- Left Information -->
+        <!-- SIDEBAR -->
+        <div class="sidebar sticky">
+          <div itemscope itemtype="http://schema.org/Person">
 
-        <div class="profile-info">
-
-          <div class="profile-label">
-            Member Profile
-          </div>
-
-
-          <!-- 修改组员姓名 -->
-
-          <h1>SHAO PENGYUAN</h1>
-
-
-          <!-- 修改职位 -->
-
-          <p class="profile-position">
-            HTML and css
-          </p>
-
-
-          <!-- 修改组员介绍 -->
-
-          <p class="profile-summary">
-            I am a Computer Science student passionate about
-            web development. I have experience using HTML and CSS
-            to build simple, responsive, and well-structured
-            websites. I enjoy learning new skills and improving
-            my front-end development abilities through hands-on
-            projects.
-          </p>
-
-
-          <!-- Quick Information -->
-
-          <div class="quick-info">
-
-            <div class="quick-info-item">
-
-              <i class="fa-solid fa-graduation-cap"></i>
-
-              <div>
-                <span>Programme</span>
-                <strong>Computer Science</strong>
-              </div>
-
+            <!-- Author avatar -->
+            <div class="author__avatar">
+              <img src="images/SHAO%20picture.jpg" alt="SHAO PENGYUAN">
             </div>
 
-
-            <div class="quick-info-item">
-
-              <i class="fa-solid fa-location-dot"></i>
-
-              <div>
-                <span>Location</span>
-                <strong>Malaysia</strong>
-              </div>
-
+            <!-- Author info -->
+            <div class="author__content">
+              <h3 class="author__name">SHAO PENGYUAN</h3>
+              <p class="author__pronouns">He/His</p>
+              <p class="author__bio">Computer Science Bachelor student at Sunway University</p>
             </div>
 
+            <!-- Follow button + social links -->
+            <div class="author__urls-wrapper">
+              <button class="btn btn--inverse">Follow</button>
+              <ul class="author__urls social-icons">
+                <li>
+                  <a href="mailto:24075400@imail.sunway.edu.my">
+                    <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>Email
+                  </a>
+                </li>
 
-            <div class="quick-info-item">
-
-              <i class="fa-solid fa-envelope"></i>
-
-              <div>
-                <span>Email</span>
-                <strong>24129314@sunwayeducation.info</strong>
-              </div>
-
-            </div>
-
-
-            <div class="quick-info-item">
-
-              <i class="fa-solid fa-code"></i>
-
-              <div>
-                <span>Main Role</span>
-                <strong>Web Development</strong>
-              </div>
-
+                <li>
+                  <a href="https://github.com/">
+                    <i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>Github
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/feed/">
+                    <i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn
+                  </a>
+                </li>
+              </ul>
             </div>
 
           </div>
-
-
-          <!-- Buttons -->
-
-          <div class="profile-buttons">
-
-            <a
-                    href="#technical-skills"
-                    class="primary-button"
-            >
-              <i class="fa-solid fa-laptop-code"></i>
-              View Skills
-            </a>
-
-
-            <a
-                    href="mailto:24129314@sunwayeducation.info"
-                    class="secondary-button"
-            >
-              <i class="fa-solid fa-envelope"></i>
-              Contact Member
-            </a>
-            <button
-                    type="button"
-                    class="download-button"
-                    onclick="downloadCV()"
-            >
-
-              <i class="fa-solid fa-file-arrow-down"></i>
-
-              Download CV
-
-            </button>
-
-          </div>
-
         </div>
 
+        <!-- PAGE CONTENT -->
+        <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+          <meta itemprop="headline" content="👋 Hi, I'm SHAO PENGYUAN!">
+          <div class="page__inner-wrap">
 
-        <!-- Right Photo -->
+            <header>
+              <h1 class="page__title" itemprop="headline">👋 Hi, I'm SHAO PENGYUAN!</h1>
+            </header>
 
-        <div class="profile-image">
+            <section class="page__content" itemprop="text">
 
-          <!--
-            组员照片路径：
+              <h3 id="welcome">Welcome!</h3>
 
-            images/SHAO picture.jpg
-          -->
+              <p>I'm SHAO PENGYUAN, a first-year Bachelor student in Computer Science at Sunway University.
+              I am co-advised by
+              <a href="https://scholarprofiles.sunwayuniversity.edu.my/en/persons/javid-iqbal-thirupattur/">Javid Iqbal Thirupattur</a> and
+              <a href="https://sunwayuniversity.edu.my/school-of-computing-and-artificial-intelligence/staff-profiles/dr-brandon-khoo-boo-guan">Dr Brandon Khoo Boo Guan</a>.
 
-          <img
-                  src="images/SHAO%20picture.jpg"
-                  alt="Photo of SHAO PENGYUAN"
-          >
+              All of my tasks are based on the content covered in the WEB1201 course.</p>
 
+              <p>I am a Computer Science student passionate about design and web development.
+                 I have experience using HTML and CSS to build simple, responsive, and well-structured websites.
+                  I enjoy learning new skills and improving my front-end development abilities through hands-on projects.</p>
 
-          <div class="profile-image-content">
+              <p>In the group project, I was responsible for the design and webpage layout using HTML and CSS, and I implemented responsive web design to ensure the website adapted to different screen sizes.</p>
 
-            <span>Project Responsibility</span>
+            </section>
 
-            <h3>
-              Frontend Development and User Interface Design
-            </h3>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================================
-           Technical Skills
-      ======================================== -->
-
-      <section
-              class="skills-section"
-              id="technical-skills"
-      >
-
-        <div class="skills-title">
-
-          <i class="fa-solid fa-laptop-code"></i>
-
-          <div>
-            <h2>Technical Skills</h2>
-
-            <p>
-              Programming languages, technologies and development tools
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="skills-container">
-
-
-          <!-- HTML -->
-
-          <div class="skill-item">
-
-            <div class="skill-heading">
-              <span>HTML</span>
-              <strong>50%</strong>
-            </div>
-
-            <div class="skill-bar">
-
-              <div
-                      class="skill-progress"
-                      style="width: 50%;"
-              ></div>
-
-            </div>
+            <footer class="page__meta"></footer>
 
           </div>
+        </article>
 
+      </div>
 
-          <!-- CSS -->
-
-          <div class="skill-item">
-
-            <div class="skill-heading">
-              <span>CSS</span>
-              <strong>50%</strong>
-            </div>
-
-            <div class="skill-bar">
-
-              <div
-                      class="skill-progress"
-                      style="width: 50%;"
-              ></div>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </section>
 
     </div>
 
@@ -391,85 +264,8 @@
     navLinks.style.right = "-200px";
   }
 
-  /*
-    Simulated Downloadable CV for SHAO PENGYUAN
-*/
-
-  function downloadCV() {
-
-    const cvContent = `
-SHAO PENGYUAN
-Computer Science Student
-Frontend Web Developer
-
-CONTACT INFORMATION
-Email: 24129314@sunwayeducation.info
-Location: Malaysia
-Programme: Computer Science
-
-PROFILE
-I am a Computer Science student who is passionate about web
-development. I have experience using HTML and CSS to build
-simple, responsive, and well-structured websites.
-
-I enjoy learning new skills and improving my front-end
-development abilities through hands-on projects.
-
-TECHNICAL SKILLS
-- HTML: 50%
-- CSS: 50%
-- Responsive Web Design
-- Web Page Structure
-- User Interface Styling
-
-PROJECT ROLE
-Frontend Web Developer
-
-PROJECT RESPONSIBILITIES
-- Developed web pages using HTML.
-- Styled website components using CSS.
-- Created clear and organised page layouts.
-- Assisted with frontend development.
-- Improved the website's visual appearance.
-- Helped ensure that pages were responsive.
-- Supported project integration and testing.
-
-EDUCATION
-Bachelor of Science in Computer Science
-Sunway University
-
-CAREER INTERESTS
-- Frontend Development
-- Web Design
-- Responsive Website Development
-- User Interface Design
-  `;
-
-    const cvFile = new Blob(
-            [cvContent],
-            {
-              type: "text/plain;charset=utf-8"
-            }
-    );
-
-    const downloadURL = URL.createObjectURL(cvFile);
-
-    const downloadLink = document.createElement("a");
-
-    downloadLink.href = downloadURL;
-
-    downloadLink.download = "Shao_Pengyuan_CV.txt";
-
-    document.body.appendChild(downloadLink);
-
-    downloadLink.click();
-
-    document.body.removeChild(downloadLink);
-
-    URL.revokeObjectURL(downloadURL);
-  }
-
 </script>
 
 </body>
 </html>
+
