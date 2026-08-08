@@ -230,6 +230,25 @@
                 </div>
             </div>
         </div>
+        <!-- Leave a review -->
+        <div class="review-box">
+            <h3>Share Your Experience</h3>
+            <div class="star-rating" id="starRating">
+                <i class="fa-regular fa-star" data-value="1"></i>
+                <i class="fa-regular fa-star" data-value="2"></i>
+                <i class="fa-regular fa-star" data-value="3"></i>
+                <i class="fa-regular fa-star" data-value="4"></i>
+                <i class="fa-regular fa-star" data-value="5"></i>
+            </div>
+            <p class="rating-label" id="ratingLabel">Tap a star to rate</p>
+
+            <textarea id="reviewText" maxlength="250" placeholder="Tell other students what you think..."></textarea>
+            <p class="char-count"><span id="charCount">0</span>/250 characters</p>
+
+            <input type="text" id="reviewerName" placeholder="Your name">
+
+            <button type="button" class="hero-btn red-btn" onclick="submitReview()">Submit Review</button>
+        </div>
     </section>
 
     <!-- ============================================
@@ -334,6 +353,90 @@
         catalogueCategory.addEventListener("change", renderCatalogue);
         catalogueSort.addEventListener("change", renderCatalogue);
         renderCatalogue();
+
+        // ---- Review module: star rating + character count ----
+let selectedRating = 0;
+const starIcons = document.querySelectorAll("#starRating i");
+const ratingLabel = document.getElementById("ratingLabel");
+const reviewText = document.getElementById("reviewText");
+const charCount = document.getElementById("charCount");
+const testimonialsRow = document.querySelector(".testimonials .row");
+const ratingWords = ["Tap a star to rate", "Poor", "Fair", "Good", "Very Good", "Excellent"];
+
+starIcons.forEach(function (star) {
+    star.addEventListener("click", function () {
+        selectedRating = parseInt(star.dataset.value);
+        highlightStars(selectedRating);
+        ratingLabel.textContent = ratingWords[selectedRating];
+    });
+});
+
+function highlightStars(rating) {
+    starIcons.forEach(function (star) {
+        if (parseInt(star.dataset.value) <= rating) {
+            star.classList.remove("fa-regular");
+            star.classList.add("fa-solid");
+        } else {
+            star.classList.remove("fa-solid");
+            star.classList.add("fa-regular");
+        }
+    });
+}
+
+reviewText.addEventListener("input", function () {
+    const length = reviewText.value.length;
+    charCount.textContent = length;
+    if (length >= 250) {
+        charCount.parentElement.classList.add("limit-reached");
+    } else {
+        charCount.parentElement.classList.remove("limit-reached");
+    }
+});
+
+function submitReview() {
+    const name = document.getElementById("reviewerName").value.trim();
+    const text = reviewText.value.trim();
+
+    if (selectedRating === 0) {
+        alert("Please select a star rating before submitting.");
+        return;
+    }
+    if (text === "") {
+        alert("Please write a short review before submitting.");
+        return;
+    }
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
+
+    const newCard = document.createElement("div");
+    newCard.className = "testimonial-col";
+    newCard.innerHTML =
+        '<img src="images/user1.jpg">' +
+        '<div>' +
+        '<p>' + text + '</p>' +
+        '<h3>' + name + '</h3>' +
+        starsToHtml(selectedRating) +
+        '</div>';
+    testimonialsRow.appendChild(newCard);
+
+    selectedRating = 0;
+    highlightStars(0);
+    ratingLabel.textContent = ratingWords[0];
+    reviewText.value = "";
+    charCount.textContent = "0";
+    charCount.parentElement.classList.remove("limit-reached");
+    document.getElementById("reviewerName").value = "";
+}
+
+function starsToHtml(rating) {
+    let html = "";
+    for (let i = 1; i <= 5; i++) {
+        html += i <= rating ? '<i class="fa fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+    }
+    return html;
+}
     </script>
 
 </body>
