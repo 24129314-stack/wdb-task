@@ -6,14 +6,12 @@
 <title>Saif Ferozkhan Pathan — Computer Science Portfolio</title>
 <meta name="description" content="Portfolio of Saif Ferozkhan Pathan, first-year Computer Science student at Sunway University: bio, education, technical skills, projects and CV.">
 <link rel="stylesheet" href="member4_styles.css">
-<link rel="stylesheet" href="member4_responsive.css">
-<link rel="stylesheet" href="member4_print.css" media="print">
 </head>
 <body>
 
 <!-- Top site-wide navigation -->
 <nav id="top-nav">
-    <img id="site-logo" src="sunway-university-seal-transparent.png" alt="Site logo">
+    <img id="site-logo" src="web%20picture/sunway-university-seal-transparent.png" alt="Site logo">
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -27,7 +25,7 @@
 <div id="wrapper">
 
   <header id="page-header">
-    <img id="photo" src="Saif_Photo.jpg" alt="Photograph of Saif Ferozkhan Pathan" width="160" height="200">
+    <img id="photo" src="images/Saif_Photo.jpg" alt="Photograph of Saif Ferozkhan Pathan" width="160" height="200">
     <div id="header-text">
       <h1>Saif Ferozkhan Pathan</h1>
       <p class="subtitle">First-year Computer Science student &middot; Sunway University, Kuala Lumpur</p>
@@ -140,6 +138,13 @@
 
 </div>
 
-<script src="member4_script.js"></script>
+<script>
+  var downloadLink = document.getElementById("download-link");
+  var message = document.getElementById("download-message");
+
+  downloadLink.onclick = function () {
+    message.innerHTML = "Preparing Saif_Pathan_CV.pdf for download\u2026 (simulated download started)";
+  };
+</script>
 </body>
 </html>

@@ -1,3 +1,10 @@
+/* =========================================================
+   MEMBER 4 - MERGED STYLESHEET
+   Base styles + Responsive styles + Print styles
+   ========================================================= */
+
+/* ========================= BASE STYLES ========================= */
+
 :root {
   --colour-page: #f4f2ec;
   --colour-panel: #ffffff;
@@ -332,4 +339,176 @@ tbody tr:nth-of-type(even) { background-color: #faf8f3; }
   padding-top: var(--space-medium);
   color: var(--colour-soft-ink);
   font-family: var(--font-heading);
+}
+
+/* ====================== RESPONSIVE STYLES ====================== */
+
+/* ============================
+   RESPONSIVE LAYER
+   ============================ */
+
+/* ---------- Tablets and small laptops ---------- */
+@media screen and (max-width: 700px) {
+
+  #wrapper {
+    width: 94%;
+    padding: var(--space-medium) 0;
+  }
+
+  h1 { font-size: 1.9em; }
+  h2 { font-size: 1.4em; }
+
+  #page-header {
+    padding: var(--space-medium);
+    gap: var(--space-medium);
+  }
+
+  #photo {
+    width: 120px;
+    height: 150px;
+  }
+
+  #top-nav a {
+    padding: var(--space-small) var(--space-medium);
+    font-size: 0.95em;
+  }
+
+  #site-nav a {
+    padding: var(--space-small);
+    font-size: 0.95em;
+  }
+
+  .panel {
+    padding: var(--space-medium);
+  }
+
+  /* Let the table scroll sideways instead of squashing columns */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media screen and (max-width: 480px) {
+
+  body { font-size: 15px; }
+
+  /* Top nav becomes a horizontal scroll strip rather than wrapping/crowding */
+  #top-nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #top-nav a {
+    white-space: nowrap;
+  }
+
+  #site-logo {
+    height: 22px;
+    left: var(--space-small);
+  }
+
+  #page-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #photo {
+    width: 100px;
+    height: 125px;
+    margin: 0 auto;
+  }
+
+  #header-text { min-width: 0; }
+
+  h1 { font-size: 1.6em; }
+  .subtitle { font-size: 1em; }
+
+  #site-nav ul {
+    justify-content: center;
+  }
+
+  .skill-list dt {
+    font-size: 0.95em;
+  }
+
+  .bar-label {
+    float: none;
+    display: inline-block;
+    margin-left: var(--space-small);
+  }
+
+  .cv-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    text-align: center;
+  }
+}
+
+/* ========================= PRINT STYLES ========================= */
+
+@media print {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+  }
+
+  #top-nav,
+  #site-nav,
+  .cv-actions,
+  #download-message,
+  #photo {
+    display: none;
+  }
+
+  #wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  #page-header,
+  .panel {
+    border: none;
+    padding: 0;
+    margin: 0 0 18pt 0;
+    background-color: #ffffff;
+    box-shadow: none;
+    animation: none;
+    display: block;
+    page-break-inside: avoid;
+  }
+
+  h2 { border-bottom: 1pt solid #000000; }
+
+  #project-grid { display: block; }
+
+  .project {
+    border: none;
+    padding: 0;
+    margin-bottom: 12pt;
+    background-color: #ffffff;
+    page-break-inside: avoid;
+  }
+
+  .bar {
+    border: 1pt solid #000000;
+    height: 10pt;
+  }
+
+  .bar span {
+    background-color: #000000;
+    animation: none;
+  }
+
+  a { color: #000000; text-decoration: none; }
+
+  #page-footer { border-top: 1pt solid #000000; }
 }
