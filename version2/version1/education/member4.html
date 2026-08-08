@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saif Ferozkhan Pathan — Computer Science Portfolio</title>
+    <meta name="description" content="Portfolio of Saif Ferozkhan Pathan, first-year Computer Science student at Sunway University: bio, education, technical skills, projects and CV.">
+    <link rel="stylesheet" href="member4_styles.css">
+    <link rel="stylesheet" href="member4_responsive.css">
+    <link rel="stylesheet" href="member4_print.css" media="print">
+</head>
+<body>
+
+<!-- Top site-wide navigation -->
+<nav id="top-nav">
+    <img id="site-logo" src="web picture/sunway-university-seal-transparent.png" alt="Site logo">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="course.html">Course Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="auth_system.html">Login/Register</a></li>
+    </ul>
+</nav>
+
+<div id="wrapper">
+
+    <header id="page-header">
+        <img id="photo" src="images/Saif_Photo.jpg" alt="Photograph of Saif Ferozkhan Pathan" width="160" height="200">
+        <div id="header-text">
+            <h1>Saif Ferozkhan Pathan</h1>
+            <p class="subtitle">First-year Computer Science student &middot; Sunway University, Kuala Lumpur</p>
+            <p>Email: <a href="mailto:25144999@imail.sunway.edu.my">25144999@imail.sunway.edu.my</a></p>
+        </div>
+    </header>
+
+    <nav id="site-nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Technical Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#cv">CV</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="panel" id="about">
+            <h2>About Me</h2>
+            <p>I am a first-year Computer Science student at <strong>Sunway University</strong> in Kuala Lumpur. Most of my time outside class goes into building things for the web and getting faster at writing code that actually works under pressure.</p>
+            <p>I am also drawn to the numerical side of computing. I read widely on <em>quantitative financial analysis</em> and portfolio management, and I enjoy testing simple ideas on real market data with <code>Python</code> before deciding whether they hold up.</p>
+            <h3>Main Interests</h3>
+            <ul class="interest-list">
+                <li>Web development (HTML, CSS, JavaScript)</li>
+                <li>Speed-coding and competitive programming practice</li>
+                <li>Machine learning</li>
+                <li>Quantitative financial analysis and portfolio management</li>
+            </ul>
+        </section>
+
+        <section class="panel" id="education">
+            <h2>Education</h2>
+            <table>
+                <caption>Academic record and current studies</caption>
+                <thead>
+                <tr><th>Period</th><th>Institution</th><th>Programme</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><time datetime="2026">2026 &ndash; present</time></td>
+                    <td>Sunway University, Kuala Lumpur</td>
+                    <td>BSc Computer Science - Year 1</td>
+                </tr>
+                <tr>
+                    <td>Pre-university</td>
+                    <td>Indian School - Dar es Salaam, Tanzania</td>
+                    <td>Mathematics, Computer Science, Physics, Chemistry and English Literature</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr><td colspan="3">Coursework so far: Programming Principles, Web Fundamentals, Computer Mathematics, Computer Organization and AI Foundation.</td></tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="panel" id="skills">
+            <h2>Technical Skills</h2>
+            <dl class="skill-list">
+                <dt>Python <span class="bar-label">95%</span></dt>
+                <dd><div class="bar bar-95"><span></span></div></dd>
+
+                <dt>MySQL <span class="bar-label">90%</span></dt>
+                <dd><div class="bar bar-90"><span></span></div></dd>
+
+                <dt>HTML &amp; CSS <span class="bar-label">80%</span></dt>
+                <dd><div class="bar bar-80"><span></span></div></dd>
+
+                <dt>JavaScript <span class="bar-label">40%</span></dt>
+                <dd><div class="bar bar-40"><span></span></div></dd>
+
+                <dt>C++ <span class="bar-label">20%</span></dt>
+                <dd><div class="bar bar-20"><span></span></div></dd>
+            </dl>
+        </section>
+
+        <section class="panel" id="projects">
+            <h2>Project Highlights</h2>
+            <div id="project-grid">
+                <article class="project">
+                    <h3>Bond Auction Predictor</h3>
+                    <p>Analysed 140+ Bank of Tanzania bond auctions from 2021 to 2026 in Python. Bond tenor turned out to be the dominant yield driver (r = 0.704), while investor competition had no real effect (r = &minus;0.023).</p>
+                    <p>I then built a linear regression model (R&sup2; = 0.58, MAE 1.47%) to predict future clearing yields and mapped Tanzania&rsquo;s full monetary policy cycle across all tenors.</p>
+                    <p><strong>Tools:</strong> Python, Pandas, Jupyter, Scikit-learn, Seaborn</p>
+                </article>
+
+                <article class="project">
+                    <h3>Monte Carlo Stock Price Predictor</h3>
+                    <p>A modular Monte Carlo stock price simulation engine with a Streamlit dashboard. It runs up to 10,000 independent price paths over two years using Geometric Brownian Motion with It&ocirc;&rsquo;s correction.</p>
+                    <p>The engine reports key risk metrics and draws interactive charts of the simulated path distribution.</p>
+                    <p><strong>Tools:</strong> Python, NumPy, Streamlit</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>My full CV lists coursework, projects and contact details. You can read it in the browser or save a copy.</p>
+            <div class="cv-actions">
+                <a class="button" href="Saif_Pathan_CV.pdf" target="_blank">View CV</a>
+                <a class="button" href="Saif_Pathan_CV.pdf" download="Saif-Ferozkhan-Pathan-CV.pdf" id="download-link">Download CV</a>
+            </div>
+            <p id="download-message"></p>
+        </section>
+    </main>
+
+    <footer id="page-footer">
+        <p>&copy; 2026 Saif Ferozkhan Pathan &middot; Sunway University, Kuala Lumpur</p>
+    </footer>
+
+</div>
+
+<script src="member4_script.js"></script>
+</body>
+</html>
